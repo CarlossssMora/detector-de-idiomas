@@ -70,3 +70,5 @@ if encontrado==1:
     with open("textos\\textos_registrados.txt", 'w',encoding="UTF-8") as archivo_aprendido:
         for nombre in textos_procesados:
             archivo_aprendido.write(f"{nombre};")
+            
+#Parte de aprendizaje
