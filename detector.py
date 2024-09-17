@@ -29,8 +29,8 @@ else:
     pass
 
 #Creación de las rutas
-ruta_archivo = "textos\\" + nombre_archivo 
-ruta_registro = "textos\\" + idioma_archivo.lower() + ".txt"
+ruta_archivo = "textos\\" + idioma_archivo.lower() + "\\" + nombre_archivo 
+ruta_registro = "textos\\" + idioma_archivo.lower() + "\\" + idioma_archivo.lower() + ".txt"
 
 #Diccionario que almacena la frecuencia de cada letra
 diccionario_letras = {}
