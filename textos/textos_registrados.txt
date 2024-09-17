@@ -1,1 +1,1 @@
-extranjero.txt;lepetitprince.txt;
+extranjero.txt;lepetitprince.txt;warofworlds.txt;

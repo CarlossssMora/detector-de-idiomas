@@ -45,6 +45,7 @@ except FileNotFoundError:
     pass
 
 #Realiza el conteo de las letras
+encontrado=1
 try:
     with open (ruta_archivo, encoding= "UTF-8") as archivo:
         for linea in archivo.readlines():
@@ -58,12 +59,14 @@ try:
                         diccionario_letras[letra] = 1
 except FileNotFoundError:
     print("Este archivo no existe.")
+    encontrado=0
 
 #Guarda los valores finales actualizados en el mismo archivo de registro
 with open (ruta_registro, 'w',encoding="UTF-8") as registro:
     for llave, valor in diccionario_letras.items():
         registro.write(f"{llave}: {valor}\n")
         
-with open("textos\\textos_registrados.txt", 'w',encoding="UTF-8") as archivo_aprendido:
-    for nombre in textos_procesados:
-        archivo_aprendido.write(f"{nombre};")
+if encontrado==1:
+    with open("textos\\textos_registrados.txt", 'w',encoding="UTF-8") as archivo_aprendido:
+        for nombre in textos_procesados:
+            archivo_aprendido.write(f"{nombre};")
