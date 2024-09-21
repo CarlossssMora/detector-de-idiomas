@@ -36,7 +36,7 @@ def conteo_letras(diccionario, texto_por_procesar):
     try:
         with open (texto_por_procesar, encoding= "UTF-8") as archivo:
             for linea in archivo.readlines():
-                print(linea)
+                #print(linea)
                 linea = linea.upper()
                 for letra in linea:
                     if letra.isalpha():
@@ -171,6 +171,15 @@ while True:
             prob_ing = calculo_probabilidad(frecuencia_texto, fre_rel_ing, total_ing)
             prob_fra = calculo_probabilidad(frecuencia_texto, fre_rel_fra, total_fra)
 
+            #Impresión de probabilidades
+            print()
+            print("---------------------------------------------")
+            print(f"Probabilidad de español: {prob_esp:.10f}")
+            print(f"Probabilidad de inglés: {prob_ing:.10f}" )
+            print(f"Probabilidad de francés: {prob_fra:.10f}")
+            print("---------------------------------------------")
+            print()
+            
             #Suma las frecuencias del texto con el del idioma detectado
             if prob_esp > prob_fra and prob_esp > prob_ing:
                 print("Este archivo está en idioma español.")
@@ -184,7 +193,7 @@ while True:
                 print("Este archivo está en idioma francés.")
                 frecuencia_fra = suma_frecuencias(frecuencia_texto, frecuencia_fra)
                 escritura_registro(frecuencia_fra, ruta_frances)
-            
+            print()
             #Agrega el texto procesado al registro de los que ya fueron leídos
             textos_procesados.append(nombre_archivo)
             registro_leidos(textos_procesados) 
