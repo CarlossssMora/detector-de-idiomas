@@ -116,7 +116,8 @@ while True:
         elif idioma_archivo == "francés" or idioma_archivo == "francés":
             idioma_archivo = "frances"
         else:
-            pass
+            print("Error, idioma no manejado.")
+            continue
         
         #Creación de las rutas
         ruta_archivo = "textos\\" + idioma_archivo + "\\" + nombre_archivo 
